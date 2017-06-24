@@ -12,11 +12,8 @@
     <div ng-controller="LunchCheckerController">
       <div>
         Your Lunch:
-        <input type="text" ng-model="lunchesRaw">
+        <input type="text" ng-model="lunchesRaw"> <button ng-click="checkIfTooMuch()">Check If Too Much</button>
       </div>
-      <div>
-        <button ng-click="checkIfTooMuch()">Check If Too Much</button>
-       </div>
       <div>{{status}}</div>
     </div>
   </body>
