@@ -1,0 +1,11 @@
+<!-- <div> {{itemsCtrl.list}} </div>
+
+<items-list list='itemsCtrl.list'>
+</items-list> -->
+
+<div>DETAILS : </div>
+<ol>
+  <li ng-repeat="item in itemsCtrl.list">
+    {{ item.short_name }} --- {{ item.name }} --- {{ item.description }}
+  </li>
+</ol>
