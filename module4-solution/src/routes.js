@@ -37,19 +37,19 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('categList.items', {
     url: '/items/{itemId}',
     templateUrl: 'src/templates/main-items.template.html',
-    controller: 'ItemsController as itemsCtrl'
+    controller: 'ItemsController as itemsCtrl',
     // params: {
     //   itemId: null
     // },
-    // resolve: {
-    //   details: ['MenuDataService', function (MenuDataService, $stateParams) {
-    //     console.log("$stateParam.itemId : ", $stateParams.itemId);
-    //     var itemDetails = MenuDataService.getItemsForCategory($stateParams.itemId);
-    //     // var itemDetails = MenuDataService.getAllCategories();
-    //     console.log("itemDetails : ", itemDetails);
-    //     return itemDetails;
-    //   }]
-    // }
+    resolve: {
+      details: ['MenuDataService', '$stateParams', 'items', function (MenuDataService, $stateParams, items) {
+        console.log("$stateParam.itemId : ", $stateParams.itemId);
+        var itemDetails = MenuDataService.getItemsForCategory($stateParams.itemId);
+        // var itemDetails = MenuDataService.getAllCategories();
+        console.log("itemDetails : ", itemDetails);
+        return itemDetails;
+      }]
+    }
   });
 
 }
