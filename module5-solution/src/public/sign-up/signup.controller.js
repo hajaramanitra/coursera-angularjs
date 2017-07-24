@@ -22,7 +22,7 @@ function SignUpController(MenuService, $state, ApiPath) {
 
 	   MenuService.setInfo(myInfo);
 
-	   $state.go('public.saved');
+	   $state.go('public.saved',  {category: signCtrl.menu.shortname});
 	   // $state.go('public.menuitems', {category: signCtrl.menu.shortname});
 	};
 }

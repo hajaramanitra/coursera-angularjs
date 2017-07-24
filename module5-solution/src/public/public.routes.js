@@ -59,8 +59,15 @@ function routeConfig ($stateProvider) {
       }
     })
      .state('public.saved', {
-      url: '/saved',
-      templateUrl: 'src/public/sign-up/saved.html'
+      url: '/saved/{category}',
+      templateUrl: 'src/public/sign-up/saved.html',
+      controller: 'SaveInfoController',
+      controllerAs: 'saveCtrl',
+      resolve: {
+        categs: ['$stateParams','MenuService', function ($stateParams, MenuService) {
+          return MenuService.getMenuItems($stateParams.category);
+        }]
+      }
     });
 }
 })();
