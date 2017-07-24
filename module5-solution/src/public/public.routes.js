@@ -57,6 +57,10 @@ function routeConfig ($stateProvider) {
           return MenuService.getInfo();
         }]
       }
+    })
+     .state('public.saved', {
+      url: '/saved',
+      templateUrl: 'src/public/sign-up/saved.html'
     });
 }
 })();
