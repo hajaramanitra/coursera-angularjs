@@ -1,0 +1,22 @@
+
+<div ng-if="infoCtrl.isEmptyInfo()">
+	NOT SIGNED UP YET !!!
+</div>
+<div ng-if="infoCtrl.isEmptyInfo() == false">
+	<h1>MY INFO : </h1>
+	<ol>
+		<li>First Name : {{infoCtrl.info.firstname}}</li>
+		<li>Last Name : {{infoCtrl.info.lastname}}</li>
+		<li>email : {{infoCtrl.info.email}}</li>
+		<li>Phone Number : {{infoCtrl.info.phone}}</li>
+		<li>Favorite menu :</li>
+	</ol>
+	<div>
+	  <a ui-sref="public.menuitems({category: infoCtrl.info.menu})">
+	    <div class="category-tile">
+	      <img width="200" height="200" ng-src="{{infoCtrl.info.picUrl}}">
+	      <span class="ng-binding">{{infoCtrl.info.menu}}</span>
+	    </div>
+	  </a>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">
+    {{ menuItemsCtrl.menuItems.category.name}} Menu
+  </h2>
+  <div class="text-center">
+    {{ menuItemsCtrl.menuItems.category.special_instructions}}
+  </div>
+
+  <div style="margin-top: 10px;" ng-if="menuItemsCtrl.menuItems.menu_items.length == 0">
+  		{{ menuItemsCtrl.categ}} : No such menu number exists
+  </div>
+
+  <menu-item ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items"
+             menu-item="menuItem">
+  </menu-item>
+
+
+</div>
